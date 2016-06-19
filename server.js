@@ -6,7 +6,7 @@ var fs = require('fs');
 var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
-// var Raspi = require("raspi-io");
+var raspi = require("raspi-io");
 var five = require("johnny-five"),
   board,servo,led,sensor;
 
