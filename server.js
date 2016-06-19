@@ -21,6 +21,19 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/", express.static(__dirname + "/public"));
 
 
+
+
+// catch all routes
+app.get('/*', function(req, res){
+  console.log("HIT!")
+  res.sendFile(process.cwd() + '/public/views/index.html')
+})
+
+
+app.listen(3000, function(){
+    console.log('Server running on port 3000');
+});
+
 board = new five.Board();
 
 board.on("ready", function() {
@@ -55,17 +68,5 @@ board.on("ready", function() {
 
 });
 
-
-
-// catch all routes
-app.get('/*', function(req, res){
-  console.log("HIT!")
-  res.sendFile(process.cwd() + '/public/views/index.html')
-})
-
-
-app.listen(3000, function(){
-    console.log('Server running on port 3000');
-});
 
 module.exports = app;
