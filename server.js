@@ -25,19 +25,19 @@ board = new five.Board();
 
 board.on("ready", function() {
 
-  myServo = new five.Servo(10);
+  servo = new five.Servo(10);
 
   board.repl.inject({
-    servo: myServo
+    servo: servo
   });
 
   
-  myServo.sweep();
+  servo.sweep();
 
   this.wait(5000, function(){
-    myServo.stop();
-    myServo.to(oldAng);
-  myServo.stop();
+    servo.stop();
+    servo.to(oldAng);
+  servo.stop();
   });
 
   
@@ -46,7 +46,7 @@ board.on("ready", function() {
     socket.on("changeAngle",function(ang, control){
     deltAng = oldAng - ang;
     oldAng = ang;
-    myServo.step(deltAng);
+    servo.step(deltAng);
         console.log(oldAng, control);
     });
 
