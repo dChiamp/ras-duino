@@ -4,7 +4,6 @@ var Raspi = require("raspi-io");
 
 board.on("ready", function() {
   var led = new five.Led(12);
-
   
   var servo = new five.Servo({
    pin: 10, 
