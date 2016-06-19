@@ -1,5 +1,6 @@
 
-var socket = io.connect('http://localhost');
+//var socket = io.connect('http://localhost:3000');
+var socket = io("http://"+document.location.hostname+":3000"),notif,control;
 var $angle_txt = $('#angle_txt'),$angle_slider = $('#angle_slider').on('change mousemove', function() {
     var ang = $angle_slider.val()
     control = "mouse"
