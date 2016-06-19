@@ -9,7 +9,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.14.0",
     "johnny-five": "^0.9.56",
-    "raspi-io": "^6.0.1"
+    "logger": "0.0.1",
+    "path": "^0.12.7",
+    "raspi-io": "^6.0.1",
+    "serialport": "^3.1.2",
+    "socket.io": "^1.4.6"
   }
 }
